@@ -1,0 +1,222 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --ivory: #F8F6F0;
+    --charcoal: #191815;
+    --espresso: #29221D;
+    --burgundy: #641E25;
+    --terracotta: #B65335;
+    --olive: #85865A;
+    --brass: #B69A63;
+    --stone: #D9D2C6;
+    --white: #FFFFFF;
+    --grey: #8B8983;
+    --sand: #EDE8DE;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #F8F6F0;
+    color: #191815;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: #F8F6F0;
+    color: #191815;
+  }
+}
+
+.font-display {
+  font-family: 'Newsreader', 'Instrument Serif', Georgia, serif;
+  font-optical-sizing: auto;
+}
+
+.font-editorial {
+  font-family: 'Instrument Serif', 'Newsreader', Georgia, serif;
+}
+
+.font-sans-ui {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* Subtle architectural drafting grid on warm ivory */
+.bg-drafting-ivory {
+  background-color: #F8F6F0;
+  background-image:
+    linear-gradient(to right, rgba(217, 210, 198, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(217, 210, 198, 0.35) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Subtle architectural grid on deep charcoal */
+.bg-drafting-charcoal {
+  background-color: #191815;
+  background-image:
+    linear-gradient(to right, rgba(41, 34, 29, 0.75) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(41, 34, 29, 0.75) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+/* Fine cross-hatch pattern for inactive silicon regions */
+.bg-diagonal-stone {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(217, 210, 198, 0.25),
+    rgba(217, 210, 198, 0.25) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+}
+
+/* Custom restrained scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EDE8DE;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B69A63;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #641E25;
+}
+
+.dark-scroll::-webkit-scrollbar-track {
+  background: #191815;
+}
+
+.dark-scroll::-webkit-scrollbar-thumb {
+  background: #3D352E;
+}
+
+.dark-scroll::-webkit-scrollbar-thumb:hover {
+  background: #B69A63;
+}
+
+@keyframes slide {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+
+/* -------------------------------------------------------------------------
+   WARM INDUSTRIAL DARK MODE
+   ------------------------------------------------------------------------- */
+:root {
+  --sw-bg-primary: #F8F6F0;
+  --sw-bg-secondary: #FFFFFF;
+  --sw-bg-elevated: #EDE8DE;
+  --sw-bg-hover: #E4DDD0;
+  --sw-text-primary: #191815;
+  --sw-text-secondary: #5A554C;
+  --sw-text-muted: #8B8983;
+  --sw-border: #D9D2C6;
+  --sw-divider: #EDE8DE;
+  --sw-burgundy: #641E25;
+  --sw-terracotta: #B65335;
+  --sw-olive: #85865A;
+  --sw-brass: #B69A63;
+}
+
+html[data-theme="dark"] {
+  --sw-bg-primary: #171512;
+  --sw-bg-secondary: #211E19;
+  --sw-bg-elevated: #2C2721;
+  --sw-bg-hover: #383129;
+  --sw-text-primary: #F2EDE3;
+  --sw-text-secondary: #B9B0A2;
+  --sw-text-muted: #898174;
+  --sw-border: #494238;
+  --sw-divider: #383129;
+  --sw-burgundy: #762D35;
+  --sw-terracotta: #C16A49;
+  --sw-olive: #92916A;
+  --sw-brass: #BDA477;
+  color-scheme: dark;
+}
+
+html[data-theme="dark"] body {
+  background-color: #171512;
+  color: #F2EDE3;
+}
+
+/* Smooth theme transitions */
+body,
+header,
+main,
+section,
+footer,
+button,
+a {
+  transition: background-color 220ms ease, border-color 220ms ease, color 220ms ease;
+}
+
+/* Surface overrides for Warm Industrial Dark */
+html[data-theme="dark"] .bg-\[\#F8F6F0\],
+html[data-theme="dark"] .bg-\[\#F8F6F0\]\/95 {
+  background-color: #171512 !important;
+}
+
+html[data-theme="dark"] .bg-\[\#FFFFFF\] {
+  background-color: #211E19 !important;
+}
+
+html[data-theme="dark"] .bg-\[\#EDE8DE\],
+html[data-theme="dark"] .bg-\[\#EDE8DE\]\/40,
+html[data-theme="dark"] .bg-\[\#EDE8DE\]\/45,
+html[data-theme="dark"] .bg-\[\#EDE8DE\]\/50,
+html[data-theme="dark"] .bg-\[\#EDE8DE\]\/60 {
+  background-color: #2C2721 !important;
+}
+
+html[data-theme="dark"] .text-\[\#191815\] {
+  color: #F2EDE3 !important;
+}
+
+html[data-theme="dark"] .text-\[\#3A352E\],
+html[data-theme="dark"] .text-\[\#5A554C\] {
+  color: #B9B0A2 !important;
+}
+
+html[data-theme="dark"] .text-\[\#8B8983\],
+html[data-theme="dark"] .text-\[\#6E6A63\] {
+  color: #898174 !important;
+}
+
+html[data-theme="dark"] .border-\[\#D9D2C6\],
+html[data-theme="dark"] .border-\[\#EDE8DE\] {
+  border-color: #494238 !important;
+}
+
+html[data-theme="dark"] .divide-\[\#EDE8DE\] > :not([hidden]) ~ :not([hidden]) {
+  border-color: #383129 !important;
+}
+
+html[data-theme="dark"] .text-\[\#641E25\] {
+  color: #BDA477 !important;
+}
+
+html[data-theme="dark"] .bg-\[\#641E25\] {
+  background-color: #762D35 !important;
+}
+
+html[data-theme="dark"] .hover\:bg-\[\#641E25\]:hover {
+  background-color: #913C43 !important;
+}
+
+html[data-theme="dark"] *:focus-visible {
+  outline: 1.5px solid #BDA477;
+  outline-offset: 2px;
+}

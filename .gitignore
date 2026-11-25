@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.shots/
+*.mjs
+.DS_Store
